@@ -1,0 +1,93 @@
+{
+  "name": "fieldwork",
+  "version": "2.0.0",
+  "description": "A content architecture workbench",
+  "main": "public/electron.js",
+  "homepage": "./",
+  "private": true,
+  "author": {
+    "name": "Your Name",
+    "email": "your-email@example.com"
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "lucide-react": "^0.263.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "@electron/notarize": "^2.2.0",
+    "concurrently": "^8.2.0",
+    "dotenv": "^16.3.1",
+    "electron": "^25.3.1",
+    "electron-builder": "^24.6.3",
+    "electron-icon-builder": "^2.0.1",
+    "wait-on": "^7.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "electron-dev": "concurrently \"npm start\" \"wait-on http://localhost:3000 && electron .\"",
+    "build-electron": "npm run build && electron .",
+    "dist": "npm run build && electron-builder",
+    "dist-mac": "npm run build && electron-builder --mac",
+    "dist-windows": "npm run build && electron-builder --win",
+    "dist-linux": "npm run build && electron-builder --linux",
+    "generate-icons": "electron-icon-builder --input=build/icon.png --output=build --flatten"
+  },
+  "build": {
+    "appId": "com.tylerlyman.fieldwork",
+    "productName": "Fieldwork",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "build/**/*",
+      "public/electron.js",
+      "public/preload.js",
+      "node_modules/**/*"
+    ],
+    "mac": {
+      "category": "public.app-category.productivity",
+      "icon": "build/icon.icns",
+      "target": "dmg",
+      "identity": "Tyler Lyman (Z8MDP8A3T2)",
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
+      "entitlements": "build/entitlements.mac.plist",
+      "entitlementsInherit": "build/entitlements.mac.plist"
+    },
+    "afterSign": "scripts/notarize.js",
+    "dmg": {
+      "contents": [
+        { "x": 130, "y": 220 },
+        { "x": 410, "y": 220, "type": "link", "path": "/Applications" }
+      ]
+    }
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

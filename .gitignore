@@ -1,6 +1,19 @@
+# Dependencies
 node_modules/
-dist/
-build/
-.DS_Store
-*.log
+desktop/node_modules/
+
+# Build output
+desktop/build/
+desktop/dist/
+
+# Environment variables — never commit these
 .env
+desktop/.env
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
