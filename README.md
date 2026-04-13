@@ -6,9 +6,17 @@ A content architecture workbench for UX professionals. Define what your content 
 
 Download the latest version from the [Releases](https://github.com/tyler-lyman/fieldwork/releases) page.
 
+## What is content architecture?
+
+The words on your screen are instances of a system. That system is what scales — not the words themselves.
+
+Most UX teams document content after the fact: a list of rules in a Notion page, a style guide that nobody updates. Content architecture flips that. Instead of static documentation, you build a living model of your content types — what each one does, what rules it follows, and how it actually appears across your product. When the system is explicit, it propagates. When it's implicit, it drifts.
+
+Fieldwork is built on the atomic design framework, applied to content. Elements are the smallest units of copy. Patterns are elements working together. Systems are patterns that span a product. Start at any level, map what you have, and see where the gaps are.
+
 ## What it does
 
-Fieldwork helps you build and maintain a content model for your product. For each content type — a validation error, a permission prompt, an empty state — you define its job, its rules, and real examples from your product. You can then audit how consistently those content types appear across different surfaces and projects.
+Fieldwork helps UX professionals map out their content ecosystem, see where there are holes, and audit the types of content they are building. For each content type — a validation error, a permission prompt, an empty state — you define its job, its rules, and real examples from your product. You can then compare how consistently those content types appear across different surfaces and projects.
 
 ## Features
 
